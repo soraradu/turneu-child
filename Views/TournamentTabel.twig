@@ -1,0 +1,60 @@
+<div class="container">
+
+	<div class="row">
+		<div class="col s12">
+			<h3>{{ post.title }}</h3>
+			<h5>Start date {{post.start_date}}</h5>
+			<h5>Enrollment cost : <b>{{post.cost}} {{post.currency}}</b></h5>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+
+			{{ post.content }}
+
+			<table>
+				<thead>
+					<th>#</th>
+					<th>Name</th>
+					<th>NickName</th>
+					<th>Data Time</th>
+					<th>Leave</th>
+				</thead>
+				<tbody>
+					{% set count = 1 %}
+					{% for row in table %}
+						<tr {% if row.user == fn('get_current_user_id') %} class="{{ ( row.leave == true )  ? 'opacity-04' : 'bgf5f5f5'  }}" {% endif %} >
+							<td>{{count}}</td>                            
+							<td>{{ fn('UserObject',row.user,null).GetUserFullName  }}</td>
+							<td>{{ fn('UserObject',row.user,null).GetUserNickName  }}</td>
+							<td>{{row.date_time}}</td>
+							<td>{{row.leave}}</td>
+						</tr>
+						{% set count = count+1 %}
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>    
+	</div>
+
+
+	<div class="row">
+		<div class="col s12">
+			<button data-target="modal1" class="btn modal-trigger">{{ button_text }} Tournament</button>
+			{{ modal }}
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col s12"><h4>Status : {{ status }}</h4></div>
+	</div>
+
+
+</div>
+
+
+
+
