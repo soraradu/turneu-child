@@ -9,4 +9,20 @@ function enqueue_main_files() {
 add_action('wp_enqueue_scripts','enqueue_main_files',200);
 
 
+
+add_action('admin_head', 'css_id_admin');
+
+function css_id_admin() {
+  echo '<style>
+    .admin_acf_product_wrapper img {
+        max-width: 50px !important;
+        max-height: 30px ;
+        object-fit: cover;
+    }
+  </style>';
+}
+
+
+
+
 ?>

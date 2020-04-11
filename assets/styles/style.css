@@ -45,4 +45,10 @@ img {
 .bgf5f5f5 {
   background: #f5f5f5;
 }
+
+.admin_acf_product_wrapper {
+  max-width: 45px !important;
+  border: 2px wsolid red;
+  background: red;
+}
 /*# sourceMappingURL=style.css.map */

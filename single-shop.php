@@ -15,21 +15,10 @@ $context = [
 
 ] ;
 
-// print_r(get_field('shop')) ;
-// update_field( 'shop', 
-// [
-// 	'currency' => 'points',
-// 	'cost' => '100',
-// 	'stock' => '32',
-// 	'availible' => 1,
-// 	'gallery' => null,
-// ]
-// , get_the_ID() );
-
 Timber::render('Views/ShopPage.twig', $context) ;
+
+unset($UserObject) ;
 ?>
-
-
 
 
 <?get_footer()?>

@@ -9,6 +9,3 @@ include('includes/functions/05_ajax_enroll_in_tournament.php') ;
 include('includes/functions/06_ajax_buy_product.php') ;
 
 
-
-
-
