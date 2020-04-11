@@ -46,7 +46,7 @@
                         'product_id' => $this->id ,
                         'product_name' => $this->title ,
                         'image' => $this->image ,
-                        'buy_date' => current_time( 'mysql' )	,
+                        'purchase_date' => current_time( 'mysql' )	,
                     ],
                     'user_' . wp_get_current_user()->ID 
                 ) ;
