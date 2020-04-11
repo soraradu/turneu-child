@@ -8,14 +8,13 @@
             $user_tickets, 
             $user_nickname ;
 
-        function __construct($user_id, $post_id) {
+        function __construct($user_id, $post_id=null) {
             $this->user_id             = $user_id;
             $this->post_id             = $post_id; 
             $this->user_points         = get_field( 'points' , "user_$this->user_id");
             $this->user_tickets        = get_field( 'tickets' , "user_$this->user_id");
             $this->user_id             = $user_id;
             $this->user_nickname       = get_user_meta($this->user_id, 'game_name', true) ;
-            $this->enrolled            = null ;
 
             if ($this->user_points == null) $this->user_points = 50;
             if ($this->user_tickets == null) $this->user_tickets = 0;

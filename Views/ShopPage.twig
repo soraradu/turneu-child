@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h5>{{post.title}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col l6">
+            {{fn('RenderThumb')}}
+        </div>
+
+        <div class="col l6">
+           <h4>Cost {{field.cost}} {{field.currency}}</h4>
+
+            {% if field.availible and field.stock > 0 %}
+
+                <a class="waves-effect waves-light btn" id="action_buy_product">Buy now</a>
+                <h6>{{field.stock}} products in stock</h6>
+
+            {% elseif field.availible == false %}
+                <h6>Product is unavailable</h6>
+                <a class="waves-effect waves-light btn disabled">unavailable</a>
+
+            {% elseif not field.stock > 0 %}
+                <h6>Product is out of stock</h6>
+                <a class="waves-effect waves-light btn disabled">unavailable</a>
+
+            {% endif %}
+
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            {# {{post.content}} #}
+        </div>
+    </div>
+
+
+
+
+
+</div>

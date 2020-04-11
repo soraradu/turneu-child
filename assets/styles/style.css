@@ -10,6 +10,10 @@ nav {
   background-color: var(--primary);
 }
 
+img {
+  max-width: 100%;
+}
+
 .btn {
   background-color: var(--primary);
 }

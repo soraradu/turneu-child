@@ -10,12 +10,6 @@ function enrollment(){
         $post_id = url_to_postid( wp_get_referer() ) ,
         $tornament_to_check = url_to_postid( wp_get_referer() )
     );
-
-    $CurrentUser =  new UserObject(
-        $user_id = wp_get_current_user()->ID,
-        $post_id = url_to_postid( wp_get_referer() )
-    ) ;
-
     
     // wp_send_json_success($UserEnrlollment->FindUserRow()) ;
 
