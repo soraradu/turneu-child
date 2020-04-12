@@ -1,0 +1,232 @@
+#d_login_form .um-field-label {
+  margin-bottom: 4px !important; }
+  #d_login_form .um-field-label label {
+    font-size: 14px !important;
+    font-weight: normal; }
+
+#d_login_form input {
+  height: 40px;
+  border: 1px solid #3b3b41 !important;
+  padding-left: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 4px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none; }
+  #d_login_form input:focus {
+    border: 1px solid var(--primary) !important;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+#d_login_form i {
+  display: none !important; }
+
+#d_login_form .um-field-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0; }
+  #d_login_form .um-field-checkbox .um-field-checkbox-state {
+    padding: 0;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7); }
+  #d_login_form .um-field-checkbox .um-field-checkbox-option {
+    margin-left: 8px; }
+
+#d_login_form #um-submit-btn {
+  height: 40px !important;
+  background: var(--btn-on-hard) !important;
+  border: none  !important;
+  border-radius: 50px !important;
+  padding: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 14px !important; }
+
+#d_login_form .um-right.um-half {
+  display: none; }
+
+#d_login_form a.um-link-alt {
+  color: var(--primary) !important;
+  font-size: 12px;
+  -webkit-transition: all .3s ease !important;
+  -o-transition: all .3s ease !important;
+  transition: all .3s ease !important; }
+  #d_login_form a.um-link-alt:hover {
+    text-decoration: none !important;
+    color: #9e9e9e !important;
+    -webkit-transition: all .3s ease !important;
+    -o-transition: all .3s ease !important;
+    transition: all .3s ease !important; }
+
+html {
+  --primary: #26A69A;
+  --gray-soft: #1B1C23;
+  --gray-hard: #111217;
+  --btn-on-hard: #292a34; }
+
+#page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+header {
+  background: var(--gray-soft);
+  min-height: 100vh;
+  max-width: 256px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+  header .site-branding {
+    padding-top: 20px;
+    padding-bottom: 40px; }
+    header .site-branding #force_logo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+
+nav#site-navigation {
+  background: none;
+  height: unset;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  nav#site-navigation .menu_text {
+    font-size: 12px;
+    margin: 8px 20px;
+    line-height: 2em;
+    color: #fff;
+    opacity: .2;
+    border-bottom: 1px solid #fff; }
+  nav#site-navigation ul#primary-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    nav#site-navigation ul#primary-menu li a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      opacity: .5;
+      padding-left: 20px;
+      line-height: 50px; }
+      nav#site-navigation ul#primary-menu li a svg {
+        margin: 4px 12px 4px 4px; }
+    nav#site-navigation ul#primary-menu li:nth-child(1) a {
+      opacity: 1; }
+
+#content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+#tournament .d_inputs input {
+  height: 40px;
+  border: 1px solid #3b3b41;
+  padding-left: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 4px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  #tournament .d_inputs input:focus {
+    border: 1px solid var(--primary);
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+#top_search {
+  height: 80px;
+  background: var(--gray-soft);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #top_search form {
+    width: 256px;
+    margin-left: 40px; }
+
+footer.site-footer {
+  width: 256px;
+  min-height: 100vh;
+  background: var(--gray-hard);
+  padding: 0 20px; }
+  footer.site-footer .signup_btn_container {
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    footer.site-footer .signup_btn_container .signup_btn {
+      font-size: 14px !important;
+      height: 40px;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50px;
+      line-height: 40px;
+      text-transform: capitalize; }
+  footer.site-footer .signup_or {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    footer.site-footer .signup_or p {
+      color: rgba(255, 255, 255, 0.56);
+      text-align: center;
+      width: 40px;
+      background: var(--gray-hard);
+      z-index: 1; }
+    footer.site-footer .signup_or .line {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.56); }
+
+/*# sourceMappingURL=main.css.map */

@@ -8,4 +8,3 @@ include('includes/functions/03_um_edit_nickname.php') ;
 include('includes/functions/05_ajax_enroll_in_tournament.php') ;
 include('includes/functions/06_ajax_buy_product.php') ;
 include('includes/functions/07_admin_users_products_page.php') ;
-
