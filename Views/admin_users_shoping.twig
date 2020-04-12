@@ -17,13 +17,14 @@
                     {% set img_src = fn('wp_get_attachment_image_src',product.image_id ) %}
                     {% set user = fn('get_userdata', product.user_id ) %}
 
-                    <tr>
+                    <tr data-user-id="{{product.id}}">
                         <td> {{count}} </td>
                         <td> <img src="{{img_src.0}}" alt=""> </td>
                         <td> <a href=" {{ fn('get_permalink', product.product_id )}} ">{{product.product_name}}</a> </td>
                         <td> <a href="{{ fn('get_edit_user_link', product.user_id) }}"> {{ user.display_name }} </a> </td>
                         <td> {{product.date}} </td>
                     </tr>
+                    
                 {% endfor %}
         </tbody>
     </table>

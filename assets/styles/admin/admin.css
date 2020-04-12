@@ -28,6 +28,7 @@
 
 #users_shoping_table table thead tr th {
   font-weight: bold;
+  text-align: left;
 }
 
 #users_shoping_table table tbody tr td a {

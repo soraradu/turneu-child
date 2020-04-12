@@ -24,7 +24,6 @@
             $this->image  = get_post_thumbnail_id($this->GetPostId()) ;
         }
 
-
         public function UserBuyProduct() {
 
             $currency    = $this->currency ;
@@ -34,6 +33,8 @@
             
             if (  $user_budget >= $this->cost && $this->stock > 0) {
 
+                global $wpdb ;
+                $table_name = $wpdb->prefix . 'users_products' ;
 
                 $insert_data = [
                     'product_id'     => $this->id ,
@@ -43,33 +44,32 @@
                     'date'           => current_time( 'mysql' )
                 ] ;
 
-                global $wpdb ;
-                $table_name = $wpdb->prefix . 'users_products' ;
                 $wpdb->insert($table_name , $insert_data);
 
-                return $insert_data ;
+                // To do ...
+        
+                    // Update
+                        // $wpdb->update(
+                        //     $table_name, 
+                        //     array(
+                        //         'id'=>'8', 
+                        //         'product_id'=> 50, 
+                        //         'product_name' => 'updated',
+                        //         'image_id' =>100,
+                        //         'user_id' => 100,
+                        //         'date' => current_time( 'mysql' ),
+                        //     ),
+                        //     array('id' => 8)
+                        // );
+                   
+                    // delete
+                        // $wpdb->delete( $table_name, array( 'id' => 8 ) );
 
                 $this->stock = $this->stock - 1 ;
-                $updated_field = $this->field;
-                $updated_field['stock'] = $this->stock ;
+                $updated_stock = $this->field;
+                $updated_stock['stock'] = $this->stock ;
                 update_field( $currency , $rest , $user_id);
-                update_field( 'shop', $updated_field, $this->GetPostId() );
-
-
-                add_row(
-                    'products' , 
-                    [
-                        'product_id' => $this->id ,
-                        'product_name' => $this->title ,
-                        'image' => $this->image ,
-                        'purchase_date' => current_time( 'mysql' )	,
-                    ],
-                    'user_' . wp_get_current_user()->ID 
-                ) ;
-
-
-
-
+                update_field( 'shop', $updated_stock, $this->GetPostId() );
 
                 return  'updated' ;
             }else {
