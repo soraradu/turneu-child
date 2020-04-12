@@ -16,7 +16,29 @@ add_action( 'admin_menu', 'my_admin_menu' );
 
 
 function my_admin_page_contents() {
-    
+    ?>
+
+<pre>
+    <?print_r(get_userdata(1))?>
+</pre>
+
+<?
+    global $wpdb ;
+    $table_name = $wpdb->prefix . 'users_products' ;
+    $DataBase_result = $wpdb->get_results("SELECT * from $table_name ") ;
+
+
+    ?>
+        <pre>
+            <?print_r($DataBase_result)?>
+        </pre>
+        
+    <?
+
+    $context =['all_products' => array_reverse($DataBase_result)] ;
+    Timber::render('Views/admin_users_shoping.twig',$context) ;
+
+    /*
     $all_users = get_users() ;
     $all_products = [] ;
     foreach ($all_users as $user) {
@@ -41,13 +63,15 @@ function my_admin_page_contents() {
     ?><!-- <pre style="border:2px solid red"><?//print_r($all_products)?></pre> --><?
     ksort($all_products);
     $all_products = array_reverse ( $all_products, true ) ;
-    ?>  <pre style="border:2px solid red; display: none"><?//print_r($all_products)?></pre>  <?
+    ?>  <pre style="border:2px solid red; display: "><?print_r($all_products)?></pre>  <?
 
     $context =[
         'all_products' => $all_products
     ] ;
     Timber::render('Views/admin_users_shoping.twig',$context) ;
 
+
+    */
 }
 
 

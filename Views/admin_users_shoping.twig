@@ -10,16 +10,20 @@
             </tr>
         </thead>
         <tbody>
-                {% set count = 1 %}
+                {% set count = 0 %}
                 {% for product in all_products %}
-                    <tr>
-                        <td>{{count}}</td>
-                        <td><img src="{{product.img_link.0}}" alt=""></td>
-                        <td><a href="{{product.post_id}}">{{product.product_name}}</a></td>
-                        <td><a href="{{product.user_link}}">{{product.user_name}}</a></td>
-                        <td>{{product.purchase_date}}</td>
-                    </tr>
+
                     {% set count = count+1 %}
+                    {% set img_src = fn('wp_get_attachment_image_src',product.image_id ) %}
+                    {% set user = fn('get_userdata', product.user_id ) %}
+
+                    <tr>
+                        <td> {{count}} </td>
+                        <td> <img src="{{img_src.0}}" alt=""> </td>
+                        <td> <a href=" {{ fn('get_permalink', product.product_id )}} ">{{product.product_name}}</a> </td>
+                        <td> <a href="{{ fn('get_edit_user_link', product.user_id) }}"> {{ user.display_name }} </a> </td>
+                        <td> {{product.date}} </td>
+                    </tr>
                 {% endfor %}
         </tbody>
     </table>

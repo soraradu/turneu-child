@@ -33,6 +33,22 @@
             $rest        = $user_budget - $this->cost ;
             
             if (  $user_budget >= $this->cost && $this->stock > 0) {
+
+
+                $insert_data = [
+                    'product_id'     => $this->id ,
+                    'product_name'   => $this->title ,
+                    'image_id'       => $this->image ,
+                    'user_id'        => $this->GetUserId(),
+                    'date'           => current_time( 'mysql' )
+                ] ;
+
+                global $wpdb ;
+                $table_name = $wpdb->prefix . 'users_products' ;
+                $wpdb->insert($table_name , $insert_data);
+
+                return $insert_data ;
+
                 $this->stock = $this->stock - 1 ;
                 $updated_field = $this->field;
                 $updated_field['stock'] = $this->stock ;
