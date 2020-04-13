@@ -3,64 +3,104 @@ html
 	--primary: #26A69A 
 	--gray-soft : #1B1C23
 	--gray-hard: #111217
-
 	--btn-on-hard: #292a34
+
+body
+	background: var(--gray-hard)
+
+
+.flex
+	display: flex
+
+.aife
+	align-items: flex-end
 
 #page
 	display: flex
 
 
-header
-	background: var(--gray-soft)
-	min-height: 100vh
-	max-width: 256px
-	flex: 1
-	
-	.site-branding
-		padding-top: 20px
-		padding-bottom: 40px
-		#force_logo
-			display: flex
-			justify-content: center
-			align-items: center
-
-
-nav#site-navigation
-	background: none
-	height: unset
-	box-shadow: none
-
-	.menu_text
-		font-size: 12px
-		margin: 8px 20px
-		line-height: 2em
-		color: #fff
-		opacity: .2
-		border-bottom: 1px solid #fff
-
-
-	.menu-meniu-tournament-container
-
-	ul#primary-menu
-		display: flex
-		flex-direction: column
-
-		li a
-			display: flex
-			align-items: center
-			opacity: .5
-			padding-left: 20px
-			line-height: 50px
-			svg
-				margin: 4px 12px 4px 4px
-
-		li:nth-child(1) a
-			opacity: 1
-
 					
 #content
 	flex: 1
 
+	.hero	
+		position: relative
+		min-height: 400px
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+
+
+
+		&__content
+			color: #fff
+			position: relative
+			z-index: 3
+			h1	
+				margin: 0
+				font-size: 40px
+				font-weight: bold
+
+			&__portrait_pic
+				border-radius: 8px
+				overflow: hidden
+				position: relative
+				display: flex
+				img
+					display: block
+					object-fit: contain
+					min-height: 100%
+					min-width: 100%
+					
+
+			&__right
+				&__tabs
+					display: flex
+					a
+						margin-right: 15px
+						color: #fff
+						h5
+							// padding: 0 15px
+							font-size: 16px
+							padding: 0 4px
+
+					a:nth-of-type(1)
+						border-bottom: 1px solid var(--primary)
+						// margin-left: -15px
+
+		.flex.aife
+			margin-bottom: 0
+
+		&__overlay
+			position: absolute
+			background: linear-gradient(0deg, rgba(17,18,23,1) 0%, rgba(17,18,23,0.1491947120645133) 100%)
+			z-index: 2
+			width: 100%
+			height: 100%
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+
+		&__bg
+			top: 0
+			bottom: 0
+			min-width: 100%	
+			position: absolute
+			z-index: 1
+			height: 100%
+			object-fit: cover
+
+
+		
+
+
+#d-overview
+	*
+		color: #fff
+	margin-top: 24px
+	h5
+		color: #fff
 
 
 #tournament
@@ -79,60 +119,4 @@ nav#site-navigation
 				border: 1px solid var(--primary) 
 				box-shadow: none  
 		
-
-#top_search
-	height: 80px
-	background: var(--gray-soft)
-	width: 100%
-	display: flex
-	align-items: center
-
-	form
-		width: 256px
-		margin-left: 40px
-
-
-
-footer.site-footer
-	flex 1
-	width: 256px
-	min-height: 100vh
-	background: var(--gray-hard)
-	padding: 0 20px
-
-	.signup_btn_container
-		height: 80px
-		display: flex
-		justify-content: center
-		align-items: center
-
-		.signup_btn
-			font-size: 14px !important
-			height: 40px
-			width: 100%
-			display: block
-			margin: 0 auto
-			border-radius: 50px
-			line-height: 40px
-			text-transform: capitalize 
-
-	.signup_or
-		position: relative
-		display: flex
-		justify-content: center
-		align-items: center
-		p
-			color: rgba(255, 255, 255, .56)
-			text-align: center
-			width: 40px
-			background: var(--gray-hard)
-			z-index: 1
-
-		.line
-			position: absolute
-			top: 50%
-			transform: translate(0, -50%)
-			width: 100%
-			height: 1px
-			background: rgba(255, 255, 255, .56)
 
