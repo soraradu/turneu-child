@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'turneu' ); ?></a> -->
 
-	<header id="masthead" class="site-header">
+	<header dis id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -87,7 +87,7 @@
 				
 				?>
 
-					<p class='menu_text'>MENU</p>
+					<p class='menu_text'>Menu</p>
 
 					<div class="menu-meniu-tournament-container">
 						<ul id="primary-menu" class="menu">

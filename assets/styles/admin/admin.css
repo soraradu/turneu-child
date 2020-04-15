@@ -2,40 +2,25 @@
   max-width: 50px !important;
   max-height: 30px;
   -o-object-fit: cover;
-     object-fit: cover;
-}
+  object-fit: cover; }
 
 #users_shoping_table {
   background: #fff;
   padding: 4px 4px 0;
   margin-right: 20px;
-  width: calc(100% - 20px);
-}
-
-#users_shoping_table th, #users_shoping_table td {
-  padding: 15px 5px;
-}
-
-#users_shoping_table tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-#users_shoping_table table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-#users_shoping_table table thead tr th {
-  font-weight: bold;
-  text-align: left;
-}
-
-#users_shoping_table table tbody tr td a {
-  text-decoration: none;
-}
-
-#users_shoping_table table tbody tr td img {
-  max-height: 40px;
-}
-/*# sourceMappingURL=admin.css.map */
+  width: calc(100% - 20px); }
+  #users_shoping_table th, #users_shoping_table td {
+    padding: 15px 5px; }
+  #users_shoping_table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  #users_shoping_table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; }
+    #users_shoping_table table thead tr th {
+      font-weight: bold;
+      text-align: left; }
+    #users_shoping_table table tbody tr td a {
+      text-decoration: none; }
+    #users_shoping_table table tbody tr td img {
+      max-height: 40px; }

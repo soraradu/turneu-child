@@ -15,12 +15,12 @@
 
 
     $context = [
-        'post' => Timber::get_post(),
-        'table' => get_field('tournament_tabel') ,
-        'button' => $UserEnrlollment->RenderButton() ,
-        'button_text' => $UserEnrlollment->GetButtonText(),
-        'status' => $UserEnrlollment->GetStatus(),
-        'modal' => $TournamentModal->RenderModal(),
+        'post'         => Timber::get_post(),
+        'table'        => get_field('tournament_tabel') ,
+        'button'       => $UserEnrlollment->RenderButton() ,
+        'button_text'  => $UserEnrlollment->GetButtonText(),
+        'status'       => $UserEnrlollment->GetStatus(),
+        'modal'        => $TournamentModal->RenderModal(),
     ] ;
 
     

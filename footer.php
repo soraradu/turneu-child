@@ -1,8 +1,8 @@
 
 	</div><!-- #content -->
 
-		<footer id="colophon" class="site-footer">
-			<?if (!is_user_logged_in()) :?>
+		<?if (!is_user_logged_in()) :?>
+			<footer id="colophon" class="site-footer">
 				<div class="signup_btn_container">
 					<a class="waves-effect waves-light btn signup_btn">Sign up free</a>
 				</div>
@@ -14,18 +14,16 @@
 					<?=do_shortcode( '[ultimatemember form_id="39"]' )?>
 				</div>
 
-			<?else:?>
-
-				<div class="d-is-logedin">
+				<!-- <div class="d-is-logedin">
 					<p>Footer is in progress.</p>
 					<p>By Developer</p>
-				</div>
-
-			<?endif?>
-		</footer>
+				</div> -->
+			</footer>
+		<?endif?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 
 </body>
 </html>

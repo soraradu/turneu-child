@@ -1,3 +1,9 @@
+html {
+  --primary: #26A69A;
+  --gray-soft: #1B1C23;
+  --gray-hard: #111217;
+  --btn-on-hard: #292a34; }
+
 #d_login_form .um-field-label {
   margin-bottom: 4px !important; }
   #d_login_form .um-field-label label {
@@ -96,6 +102,9 @@ header {
       -ms-flex-align: center;
       align-items: center;
       opacity: .8; }
+  @media (max-width: 992px) {
+    header {
+      display: none; } }
 
 nav#site-navigation {
   background: none;
@@ -226,12 +235,6 @@ footer.site-footer {
   footer.site-footer .d-is-logedin {
     color: #fff; }
 
-html {
-  --primary: #26A69A;
-  --gray-soft: #1B1C23;
-  --gray-hard: #111217;
-  --btn-on-hard: #292a34; }
-
 body {
   background: var(--gray-hard); }
 
@@ -275,6 +278,9 @@ body {
         margin: 0;
         font-size: 40px;
         font-weight: bold; }
+        @media (max-width: 600px) {
+          #content .hero__content h1 {
+            font-size: 20px; } }
       #content .hero__content__portrait_pic {
         border-radius: 8px;
         overflow: hidden;
@@ -346,5 +352,60 @@ body {
     border: 1px solid var(--primary);
     -webkit-box-shadow: none;
     box-shadow: none; }
+
+.small_tournaments_container .torunament_col a.thumb_link {
+  display: block;
+  position: relative;
+  -webkit-transition: all .3s ease !important;
+  -o-transition: all .3s ease !important;
+  transition: all .3s ease !important; }
+  .small_tournaments_container .torunament_col a.thumb_link:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
+  .small_tournaments_container .torunament_col a.thumb_link .thumb_container {
+    margin-bottom: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding-top: calc(1080 / 1920 * 100%); }
+    .small_tournaments_container .torunament_col a.thumb_link .thumb_container img, .small_tournaments_container .torunament_col a.thumb_link .thumb_container .overlay {
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1; }
+    .small_tournaments_container .torunament_col a.thumb_link .thumb_container .overlay {
+      z-index: 2;
+      background: #000;
+      opacity: .2;
+      -webkit-transition: all .3s ease !important;
+      -o-transition: all .3s ease !important;
+      transition: all .3s ease !important; }
+      .small_tournaments_container .torunament_col a.thumb_link .thumb_container .overlay:hover {
+        opacity: 0; }
+
+.small_tournaments_container .torunament_col h5 {
+  font-size: 12px;
+  opacity: .4;
+  margin: 12px 0 0; }
+
+.small_tournaments_container .torunament_col h4 {
+  font-size: 14px;
+  margin: 8px 0; }
+
+.small_tournaments_container .torunament_col h6 {
+  margin: 0;
+  font-size: 12px;
+  opacity: .4;
+  margin: 8px 0; }
 
 /*# sourceMappingURL=main.css.map */
