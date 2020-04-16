@@ -21,6 +21,9 @@
 <body id="tournament" <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
+	<div class="ww">
+		<p></p>
+	</div>
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'turneu' ); ?></a> -->
 
 	<header dis id="masthead" class="site-header">

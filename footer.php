@@ -4,7 +4,7 @@
 		<?if (!is_user_logged_in()) :?>
 			<footer id="colophon" class="site-footer">
 				<div class="signup_btn_container">
-					<a class="waves-effect waves-light btn signup_btn">Sign up free</a>
+					<a class="btn btn-primary signup_btn">Sign up free</a>
 				</div>
 				<div class="signup_or">
 					<p>Or</p>

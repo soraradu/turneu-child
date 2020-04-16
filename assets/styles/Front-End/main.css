@@ -1,8 +1,74 @@
-html {
+:root {
   --primary: #26A69A;
   --gray-soft: #1B1C23;
   --gray-hard: #111217;
   --btn-on-hard: #292a34; }
+
+a {
+  color: #fff; }
+  a:hover {
+    color: var(--primary);
+    text-decoration: none; }
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none; }
+  .btn:hover {
+    background: #1e847a;
+    color: #fff; }
+
+.container {
+  max-width: 1600px; }
+
+body {
+  background: var(--gray-hard);
+  color: #fff; }
+
+.ratio-6-8 .pic {
+  padding-bottom: calc( 8 / 6 * 100%); }
+
+.ratio-16-9 .pic {
+  padding-bottom: calc( 9 / 16 * 100%); }
+
+.ratio {
+  width: 100%; }
+  .ratio .pic {
+    position: relative;
+    overflow: hidden; }
+    .ratio .pic img {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+
+.radius-8 {
+  border-radius: 8px;
+  overflow: hidden; }
+
+.spacer_01 {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  opacity: .2;
+  margin: 20px 0; }
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background: #1e847a;
+  outline: none; }
+
+.ww {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  padding: 8px 16px;
+  background: #353535;
+  color: #fff;
+  z-index: 8888888888; }
+  .ww p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px; }
 
 #d_login_form .um-field-label {
   margin-bottom: 4px !important; }
@@ -26,9 +92,6 @@ html {
     -webkit-box-shadow: none;
     box-shadow: none; }
 
-#d_login_form i {
-  display: none !important; }
-
 #d_login_form .um-field-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,9 +105,7 @@ html {
   margin: 0; }
   #d_login_form .um-field-checkbox .um-field-checkbox-state {
     padding: 0;
-    -webkit-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    transform: scale(0.7); }
+    position: relative; }
   #d_login_form .um-field-checkbox .um-field-checkbox-option {
     margin-left: 8px; }
 
@@ -125,7 +186,8 @@ nav#site-navigation {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 0; }
     nav#site-navigation ul#primary-menu li a {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -148,18 +210,24 @@ nav#site-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  padding: 0;
+  font-size: 15;
+  padding: .75em; }
   #top_search form {
-    width: 256px;
-    margin-left: 40px; }
+    width: 256px; }
+    @media (max-width: 576px) {
+      #top_search form {
+        max-width: 100px; } }
     #top_search form input {
       margin: 0; }
   #top_search .d-nav-points-tickets-container {
     color: #fff;
-    margin-left: auto;
-    margin-right: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -198,14 +266,10 @@ footer.site-footer {
     -ms-flex-align: center;
     align-items: center; }
     footer.site-footer .signup_btn_container .signup_btn {
-      font-size: 14px !important;
-      height: 40px;
-      width: 100%;
-      display: block;
-      margin: 0 auto;
-      border-radius: 50px;
-      line-height: 40px;
-      text-transform: capitalize; }
+      color: #fff;
+      width: 100%; }
+      footer.site-footer .signup_btn_container .signup_btn:hover {
+        color: #fff; }
   footer.site-footer .signup_or {
     position: relative;
     display: -webkit-box;
@@ -235,8 +299,71 @@ footer.site-footer {
   footer.site-footer .d-is-logedin {
     color: #fff; }
 
-body {
-  background: var(--gray-hard); }
+.hero_section {
+  position: relative;
+  min-height: 400px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  padding-bottom: 30px; }
+  .hero_section > .container {
+    padding: 0 30px; }
+  .hero_section .ratio-6-8 {
+    max-width: 180px; }
+  @media (max-width: 992px) {
+    .hero_section {
+      min-height: unset;
+      padding-top: 40px; }
+      .hero_section .ratio-6-8 {
+        max-width: 120px;
+        margin-bottom: 20px; } }
+  .hero_section h1 {
+    font-size: 40px; }
+    @media (max-width: 768px) {
+      .hero_section h1 {
+        font-size: 24px; } }
+  .hero_section .row {
+    position: relative;
+    z-index: 2; }
+  .hero_section .overlay {
+    pointer-events: none;
+    position: absolute;
+    background: -webkit-gradient(linear, left bottom, left top, from(#111217), to(rgba(17, 18, 23, 0.149195)));
+    background: -webkit-linear-gradient(bottom, #111217 0%, rgba(17, 18, 23, 0.149195) 100%);
+    background: -o-linear-gradient(bottom, #111217 0%, rgba(17, 18, 23, 0.149195) 100%);
+    background: linear-gradient(0deg, #111217 0%, rgba(17, 18, 23, 0.149195) 100%);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .hero_section a {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0 5px 2px; }
+    .hero_section a.active {
+      color: var(--primary);
+      border-bottom: 1px solid var(--primary); }
+
+.overview {
+  padding-top: 30px; }
+  .overview .row.col h2 {
+    margin-bottom: 20px;
+    font-size: 20px; }
+
+.tournament-column {
+  margin-bottom: 40px; }
+  .tournament-column .ratio {
+    margin-bottom: 12px; }
+  .tournament-column h3, .tournament-column h4 {
+    font-size: 12px;
+    opacity: .4;
+    margin: 4px 0; }
+  .tournament-column h2 {
+    font-size: 16px;
+    margin: 4px 0; }
 
 .flex {
   display: -webkit-box;
@@ -254,9 +381,8 @@ body {
   display: flex; }
 
 #content {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
+  width: 100%;
+  display: block; }
   #content .hero {
     position: relative;
     min-height: 400px;
@@ -269,11 +395,13 @@ body {
     flex-direction: column;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    overflow: hidden; }
     #content .hero__content {
       color: #fff;
       position: relative;
-      z-index: 3; }
+      z-index: 3;
+      max-width: 100vw; }
       #content .hero__content h1 {
         margin: 0;
         font-size: 40px;
@@ -287,13 +415,15 @@ body {
         position: relative;
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        position: relative;
+        border: 2px solid red;
+        max-height: 256px; }
         #content .hero__content__portrait_pic img {
           display: block;
-          -o-object-fit: contain;
-          object-fit: contain;
-          min-height: 100%;
-          min-width: 100%; }
+          -o-object-fit: cover;
+          object-fit: cover;
+          width: 100%; }
       #content .hero__content__right__tabs {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -329,7 +459,11 @@ body {
       z-index: 1;
       height: 100%;
       -o-object-fit: cover;
-      object-fit: cover; }
+      object-fit: cover;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
 
 #d-overview {
   margin-top: 24px; }
@@ -347,11 +481,13 @@ body {
   border-radius: 4px;
   color: #fff;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background: var(--gray-hard); }
   #tournament .d_inputs input:focus {
     border: 1px solid var(--primary);
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    outline: none; }
 
 .small_tournaments_container .torunament_col a.thumb_link {
   display: block;

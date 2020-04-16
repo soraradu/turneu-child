@@ -1,6 +1,14 @@
 (function($){
 	$(function() {
 
+
+		const ww = $('.ww p')
+		
+		ww.text($('html').width() + 20)
+		$(window).resize( e => {
+			ww.text(e.currentTarget.innerWidth)
+			
+		})
 		// 	setTimeout(e => {
 		// 		const btn = document.querySelector('.editor-post-publish-button')
 		// 		btn.addEventListener('click', event => {
@@ -21,7 +29,6 @@
 
 		// return null 
 
-		$('.modal').modal();
 
         $('#action_in_tournament').click(e => {
 

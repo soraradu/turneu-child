@@ -4,7 +4,8 @@ var browserSync = require('browser-sync').create()
 
 gulp.task('browserSync',function() {
 	browserSync.init({
-		proxy: 'http://localhost/Turneu/'
+		proxy: 'http://localhost/Turneu/',
+		notify: false
 	})
 })
 
@@ -22,6 +23,7 @@ gulp.task('watch', ['browserSync'], function(){
 	// gulp.watch('sass/**/*.sass',['sass'])
 	gulp.watch('**/*.sass',browserSync.reload)
 	gulp.watch('**/*.css',browserSync.reload)
+	gulp.watch('**/*.twig',browserSync.reload)
 	gulp.watch('**/*.php', browserSync.reload)	
 })
 

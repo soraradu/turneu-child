@@ -1,0 +1,43 @@
+
+
+{# HERO SECTION #}
+<div class="container-fluid flex align-items-end hero_section" style="background-image: url('http://localhost/Turneu/wp-content/uploads/2020/04/HeaderV1.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="ratio ratio-6-8 radius-8">
+                <div class="pic">
+                    <img src="http://localhost/Turneu/wp-content/uploads/2020/04/profileV1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col flex flex-column justify-content-end">
+                <div>
+                    <h1>PLAYERUNKNOWN'S BATTLEGROUNDS</h1>
+                    <div class="flex">
+                        <a class="active" href="#">Overview</a>
+                        <a href="#">Torunaments</a>
+                        <a href="#">News</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+{# OVERVIEW #}
+<div class="container-fluid overview">
+    <div class="container">
+        <div class="row col">
+            <h2>Featured tournaments</h2>
+        </div>
+        <div class="row">
+
+            {% for post in overview_torunaments %}
+
+                {% include '/components/tournament-column--sm12-md6-lg4-xl3.html' %}
+            
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
