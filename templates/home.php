@@ -23,7 +23,9 @@
                     )                   
                 )
             )
-         )
+        ),
+        'overview_tabs'=>true,
+
     ] ;
 
 

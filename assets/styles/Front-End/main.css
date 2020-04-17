@@ -302,7 +302,7 @@ footer.site-footer {
 .hero_section {
   position: relative;
   min-height: 400px;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   color: #fff;
   padding-bottom: 30px; }
@@ -543,5 +543,20 @@ footer.site-footer {
   font-size: 12px;
   opacity: .4;
   margin: 8px 0; }
+
+.tournament-row {
+  padding: 12px 0;
+  margin: 12px 0;
+  border-top: 1px solid #1B1C23;
+  border-bottom: 1px solid #1B1C23; }
+  .tournament-row .pic img {
+    max-width: 100%; }
+  .tournament-row h3, .tournament-row h4 {
+    font-size: 12px;
+    opacity: .4;
+    margin: 4px 0; }
+  .tournament-row h2 {
+    font-size: 16px;
+    margin: 4px 0; }
 
 /*# sourceMappingURL=main.css.map */
