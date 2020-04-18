@@ -13,35 +13,15 @@
             </div>
 
             <div class="col-md-9">
-                {% set grupDate = null %}
-                {% set count = 0 %}
 
                 {% for tournament in tournaments %}
-                    {% set date = tournament.start_date %}
-
-                    {% if fn( 'FrontEndTime',[date]).CheckIfIsToday(date) and grupDate != 'Today' %}
-                        {% set grupDate = 'today' %}
-                        <h2>Today</h2>
-
-                    {% elseif fn( 'FrontEndTime',[date]).CheckIfIsTomorrow(date) and grupDate != 'Tomorrow' %}
-                        {% set grupDate = 'Tomorrow' %}
-                        <h2>Tomorrow</h2>
-
-                    {% elseif fn( 'FrontEndTime',[date]).CheckIfIsInSameWeek(date) and grupDate != 'This Week' %}
-                        {% set grupDate = 'This Week' %}
-                        <h2>This Week</h2>
-
-                    {% elseif fn( 'FrontEndTime',[date]).CheckIfIsNextWeek(date) and grupDate != 'This Week'  %}
-                        {% set grupDate = 'This Week' %}
-                        <h2>Next Week</h2>
-
-                    {% elseif grupDate != 'This Weeks' %}
-                        <h2>Next Weeks</h2>
-                        {% set grupDate = 'This Weeks' %}
 
 
+                    {% set activeGrupTitle = fn( 'FrontEndTime',tournament.start_date).SetGrupDateTitle %}
+
+                    {% if activeGrupTitle %}
+                        <h4>{{activeGrupTitle}}</h4>
                     {% endif %}
-                    
 
                     <div class="row tournament-row">
                         <div class="col-md-3">
@@ -53,7 +33,7 @@
                         </div>
                         <div class="col-md-9 d-flex justify-content-start align-items-center">
                             <div>
-                                <h3>{{ fn( 'FrontEndTime',[date]).FormatTrounamentDate }}</h3>
+                                <h3>{{ fn( 'FrontEndTime',tournament.start_date).FormatTrounamentDate }}</h3>
                                 <a href="{{tournament.link}}"><h2>{{tournament.title}}</h2></a>
                                 <h4>{{tournament.cost}} {{tournament.currency}} &#8226; {{tournament.slots}} slots </h4>
                             </div>
@@ -67,3 +47,5 @@
         </div>
     </div>
 </div>
+
+

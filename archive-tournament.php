@@ -20,14 +20,11 @@
         // )
     ) ;
 
-
     $context = [
         'tournaments' => Timber::get_posts( $args ) ,
         'overview_tabs' => false
     ] ;
     Timber::render('Views/archive-tournament.twig', $context) ;
-
-
 
     get_footer()
 
