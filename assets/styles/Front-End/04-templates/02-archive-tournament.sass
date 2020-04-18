@@ -1,8 +1,12 @@
+.tournament-rows-container
+	h5:not(:first-child)
+		margin: 24px 0 16px
+	
 .tournament-row
-	padding: 12px 0
-	margin: 12px 0
-	border-top: 1px solid #1B1C23
-	border-bottom: 1px solid #1B1C23
+	padding: 20px 0
+	margin: 0 0 0 -1px
+	border-top: 1px solid #2f303d
+	border-bottom: 1px solid #2f303d
 
 	.pic
 		img
@@ -17,6 +21,14 @@
 		font-size: 16px
 		margin: 4px 0 
 		
+	.col-sm-3
+		padding: 0	
+
+	@media (max-width: $sm)
+		.col-sm-9
+			padding: 12px 0 0 
+
+
 	// div[class^="col"]
 
 		

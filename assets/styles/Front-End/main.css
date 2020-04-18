@@ -10,11 +10,90 @@ a {
     color: var(--primary);
     text-decoration: none; }
 
+input {
+  height: 40px;
+  border: 1px solid #3b3b41;
+  padding-left: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 4px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: var(--gray-hard);
+  max-width: 100%; }
+  input:focus {
+    border: 1px solid var(--primary);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none; }
+
+.dropdown-toggle {
+  width: 100%;
+  background: var(--gray-soft);
+  color: #fff;
+  border: none; }
+  .dropdown-toggle:hover {
+    background: var(--btn-on-hard);
+    color: #fff; }
+
+.form-control {
+  border: 1px solid #3b3b41;
+  background: var(--gray-soft); }
+  .form-control select,
+  .form-control option {
+    background: var(--gray-soft);
+    margin-bottom: 20px;
+    padding-bottom: 20px; }
+    .form-control select:hover, .form-control select:focus, .form-control select:active,
+    .form-control option:hover,
+    .form-control option:focus,
+    .form-control option:active {
+      background: var(--gray-soft) !important;
+      color: red;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+  .form-control:focus {
+    border: 1px solid #3b3b41;
+    background: var(--gray-soft);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none; }
+
+.dropdown-menu {
+  background: var(--gray-soft); }
+  .dropdown-menu a {
+    color: #fff; }
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background: var(--primary);
+  color: #fff; }
+
 .btn {
+  background: var(--gray-soft);
+  border: none;
+  height: 40px; }
+  .btn:hover {
+    background: var(--btn-on-hard); }
+  .btn:focus, .btn:hover {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none; }
+
+.btn-empty {
+  background: none;
+  border: 1px solid #3b3b41; }
+  .btn-empty:hover {
+    border: 1px solid rgba(0, 0, 0, 0); }
+
+.btn.signup_btn {
   background: var(--primary);
   color: #fff;
   border: none; }
-  .btn:hover {
+  .btn.signup_btn:hover {
     background: #1e847a;
     color: #fff; }
 
@@ -69,6 +148,15 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px; }
+
+.mt-48 {
+  margin-top: 48px; }
+
+.mb-48 {
+  margin-bottom: 48px; }
+
+.h-40 {
+  height: 40px; }
 
 #d_login_form .um-field-label {
   margin-bottom: 4px !important; }
@@ -472,23 +560,6 @@ footer.site-footer {
   #d-overview h5 {
     color: #fff; }
 
-#tournament .d_inputs input {
-  height: 40px;
-  border: 1px solid #3b3b41;
-  padding-left: 12px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 4px;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: var(--gray-hard); }
-  #tournament .d_inputs input:focus {
-    border: 1px solid var(--primary);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none; }
-
 .small_tournaments_container .torunament_col a.thumb_link {
   display: block;
   position: relative;
@@ -544,11 +615,14 @@ footer.site-footer {
   opacity: .4;
   margin: 8px 0; }
 
+.tournament-rows-container h5:not(:first-child) {
+  margin: 24px 0 16px; }
+
 .tournament-row {
-  padding: 12px 0;
-  margin: 12px 0;
-  border-top: 1px solid #1B1C23;
-  border-bottom: 1px solid #1B1C23; }
+  padding: 20px 0;
+  margin: 0 0 0 -1px;
+  border-top: 1px solid #2f303d;
+  border-bottom: 1px solid #2f303d; }
   .tournament-row .pic img {
     max-width: 100%; }
   .tournament-row h3, .tournament-row h4 {
@@ -558,5 +632,10 @@ footer.site-footer {
   .tournament-row h2 {
     font-size: 16px;
     margin: 4px 0; }
+  .tournament-row .col-sm-3 {
+    padding: 0; }
+  @media (max-width: 576px) {
+    .tournament-row .col-sm-9 {
+      padding: 12px 0 0; } }
 
 /*# sourceMappingURL=main.css.map */

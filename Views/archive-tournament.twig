@@ -8,11 +8,42 @@
 
             <div class="col-md-3">
             
-                FILTER AREA HERE
+                <input type="text" placeholder="search">
+
+                {# <select class="form-control mt-4" id="filter-slots">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select> #}
+
+
+                <div class="dropdown">
+                    <button class="btn mt-4 dropdown-toggle align-left d-flex align-items-center justify-content-between" type="button" id="filter-slots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Slots</button>
+                    <div class="dropdown-menu" aria-labelledby="filter-slots">
+                        <a class="dropdown-item" href="javascript:void(0)">4</a>
+                        <a class="dropdown-item" href="javascript:void(0)">8</a>
+                        <a class="dropdown-item" href="javascript:void(0)">16</a>
+                        <a class="dropdown-item" href="javascript:void(0)">32</a>
+                        <a class="dropdown-item" href="javascript:void(0)">64</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn mt-4 dropdown-toggle align-left d-flex align-items-center justify-content-between" type="button" id="filter-slots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entery Fee</button>
+                    <div class="dropdown-menu" aria-labelledby="filter-slots">
+                        <a class="dropdown-item" href="javascript:void(0)">Free</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Points</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Tickets</a>
+                    </div>
+                </div>
+
+                <a class="mt-48 mb-48 btn btn-primary btn-empty w-100 ">Reset Filters</a>
 
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-9 tournament-rows-container">
 
                 {% for tournament in tournaments %}
 
@@ -20,18 +51,18 @@
                     {% set activeGrupTitle = fn( 'FrontEndTime',tournament.start_date).SetGrupDateTitle %}
 
                     {% if activeGrupTitle %}
-                        <h4>{{activeGrupTitle}}</h4>
+                        <h5>{{activeGrupTitle}}</h5>
                     {% endif %}
 
                     <div class="row tournament-row">
-                        <div class="col-md-3">
+                        <div class="col-sm-3 col-12">
                             <div class="pic radius-8 ratio-16-9">
                                 <a href="{{tournament.link}}">
                                     <img src="{{tournament.thumbnail.src('full')}}" alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-9 d-flex justify-content-start align-items-center">
+                        <div class="col-sm-9 col-12 d-flex justify-content-start align-items-center">
                             <div>
                                 <h3>{{ fn( 'FrontEndTime',tournament.start_date).FormatTrounamentDate }}</h3>
                                 <a href="{{tournament.link}}"><h2>{{tournament.title}}</h2></a>

@@ -29,19 +29,19 @@ class FrontEndTime {
         $time = strtotime($this->date) ;
 
         if ($this->CheckIfIsToday($this->date)){
-            return  'Today , at ' . date("H:i" , strtotime($this->date)) ;
+            return  /**'Today , at ' . */ date("H:i" , strtotime($this->date)) ;
 
         }elseif ($this->CheckIfIsTomorrow($this->date)) {
-            return  'Tomorrow , at ' . date("H:i" , strtotime($this->date)) ;
+            return  /**'Tomorrow , at ' . */ date("H:i" , strtotime($this->date)) ;
         
         }elseif ($this->CheckIfIsInSameWeek($this->date)) {
-            return 'This week, ' . date('d', $time). ' at ' . date("H:i" , $time ) ;
+            return /**'This week, ' . */ date('d', $time). ' at ' . date("H:i" , $time ) ;
         
         }elseif ($this->CheckIfIsNextWeek($this->date)) {
-            return 'Next week, ' . date('d', $time). ' ' .date('t', $time). ' ' .date('F', $time) .', at ' . date("H:i" , $time ) ;
+            return /**'Next week, ' . */ date('d', $time). ' ' .date('t', $time). ' ' .date('F', $time) .', at ' . date("H:i" , $time ) ;
             
         }else{
-            return 'Next weeks, ' . date('d', $time). ' ' .date('t', $time). ' ' .date('F', $time) .', at ' . date("H:i" , $time ) ;
+            return /**'Next weeks, ' . */ date('d', $time). ' ' .date('t', $time). ' ' .date('F', $time) .', at ' . date("H:i" , $time ) ;
 
         }
 
