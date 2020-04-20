@@ -10,14 +10,14 @@
         'order'          => 'ASC', 
         'meta_key'       => 'start_date',
 
-        // 'meta_query' => array(
-        //     array(
-        //         'key'     => 'start_date',
-        //         'value'   =>  date("Y-m-d"),
-        //         'compare' => '>=',
-        //         'type'    => 'DATE'
-        //     )                   
-        // )
+        'meta_query' => array(
+            array(
+                'key'     => 'start_date',
+                'value'   =>  date("Y-m-d"),
+                'compare' => '>=',
+                'type'    => 'DATE'
+            )                   
+        )
     ) ;
 
     $context = [
