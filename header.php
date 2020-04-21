@@ -21,7 +21,7 @@
 <body id="tournament" <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<div class="ww">
+	<div class="ww" style="display: none !important">
 		<p></p>
 	</div>
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'turneu' ); ?></a> -->

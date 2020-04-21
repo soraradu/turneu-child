@@ -158,28 +158,6 @@ body {
 .h-40 {
   height: 40px; }
 
-#d_login_form .um-field-label {
-  margin-bottom: 4px !important; }
-  #d_login_form .um-field-label label {
-    font-size: 14px !important;
-    font-weight: normal; }
-
-#d_login_form input {
-  height: 40px;
-  border: 1px solid #3b3b41 !important;
-  padding-left: 12px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 4px;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: none; }
-  #d_login_form input:focus {
-    border: 1px solid var(--primary) !important;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-
 #d_login_form .um-field-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -341,11 +319,14 @@ nav#site-navigation {
       width: 22px; }
 
 footer.site-footer {
-  width: 256px;
+  position: relative;
+  z-index: 1;
+  min-width: 256px;
+  max-width: 256px;
   min-height: 100vh;
   background: var(--gray-hard);
   padding: 0 20px; }
-  footer.site-footer .signup_btn_container {
+  footer.site-footer .footer_login_register .signup_btn_container {
     height: 80px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -356,12 +337,13 @@ footer.site-footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    footer.site-footer .signup_btn_container .signup_btn {
+    footer.site-footer .footer_login_register .signup_btn_container .signup_btn {
+      border-radius: 50px;
       color: #fff;
       width: 100%; }
-      footer.site-footer .signup_btn_container .signup_btn:hover {
+      footer.site-footer .footer_login_register .signup_btn_container .signup_btn:hover {
         color: #fff; }
-  footer.site-footer .signup_or {
+  footer.site-footer .footer_login_register .signup_or {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -372,13 +354,13 @@ footer.site-footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    footer.site-footer .signup_or p {
+    footer.site-footer .footer_login_register .signup_or p {
       color: rgba(255, 255, 255, 0.56);
       text-align: center;
       width: 40px;
       background: var(--gray-hard);
       z-index: 1; }
-    footer.site-footer .signup_or .line {
+    footer.site-footer .footer_login_register .signup_or .line {
       position: absolute;
       top: 50%;
       -webkit-transform: translate(0, -50%);
@@ -387,8 +369,84 @@ footer.site-footer {
       width: 100%;
       height: 1px;
       background: rgba(255, 255, 255, 0.56); }
-  footer.site-footer .d-is-logedin {
+  footer.site-footer .footer_login_register .d-is-logedin {
     color: #fff; }
+  footer.site-footer .footer_login_register #d_login_form .um-col-alt-b a.um-link-alt {
+    pointer-events: none; }
+  footer.site-footer .footer_login_register #d_register_form {
+    display: none; }
+    footer.site-footer .footer_login_register #d_register_form .um-button.um-alt {
+      display: none; }
+    footer.site-footer .footer_login_register #d_register_form #um-submit-btn {
+      height: 40px !important;
+      background: var(--btn-on-hard) !important;
+      border: none  !important;
+      border-radius: 50px !important;
+      padding: 0 !important;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-top: 24px;
+      font-size: 14px !important; }
+  footer.site-footer .footer_login_register #d_reset_password_form {
+    display: none; }
+    footer.site-footer .footer_login_register #d_reset_password_form #um-submit-btn {
+      border: 2px solid red;
+      min-width: 100% !important;
+      height: 40px !important;
+      background: var(--btn-on-hard) !important;
+      border: none  !important;
+      border-radius: 50px !important;
+      padding: 0 !important;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-top: 24px;
+      font-size: 14px !important;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  footer.site-footer .footer_login_register #d_login_form .um-field-label,
+  footer.site-footer .footer_login_register #d_register_form .um-field-label,
+  footer.site-footer .footer_login_register #d_reset_password_form .um-field-label {
+    margin-bottom: 4px !important; }
+    footer.site-footer .footer_login_register #d_login_form .um-field-label label,
+    footer.site-footer .footer_login_register #d_register_form .um-field-label label,
+    footer.site-footer .footer_login_register #d_reset_password_form .um-field-label label {
+      font-size: 14px !important;
+      font-weight: normal; }
+  footer.site-footer .footer_login_register #d_login_form input,
+  footer.site-footer .footer_login_register #d_register_form input,
+  footer.site-footer .footer_login_register #d_reset_password_form input {
+    height: 40px;
+    border: 1px solid #3b3b41 !important;
+    padding-left: 12px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: none; }
+    footer.site-footer .footer_login_register #d_login_form input:focus,
+    footer.site-footer .footer_login_register #d_register_form input:focus,
+    footer.site-footer .footer_login_register #d_reset_password_form input:focus {
+      border: 1px solid var(--primary) !important;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
 
 .hero_section {
   position: relative;
@@ -640,6 +698,15 @@ footer.site-footer {
   @media (max-width: 576px) {
     .tournament-row .col-sm-9 {
       padding: 12px 0 0; } }
+
+#content {
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+
+.blur-2 {
+  -webkit-filter: blur(2px);
+  filter: blur(2px); }
 
 .tournament-table thead tr .text-pic {
   text-align: center; }

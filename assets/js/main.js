@@ -2,32 +2,59 @@
 	$(function() {
 
 
+
+
 		const ww = $('.ww p')
-		
 		ww.text($('html').width() + 20)
-		$(window).resize( e => {
-			ww.text(e.currentTarget.innerWidth)
+		$(window).resize( e => ww.text(e.currentTarget.innerWidth) )
+
+
+		$('footer')
+			.mouseover( e => $('#content').addClass('blur-2') )
+			.mouseout( e => $('#content').removeClass('blur-2') )
+
+
+		let login_state = 'login' 
+
+		$('#d_login_form .um-col-alt-b a.um-link-alt')
+			.attr('href','#')
+			.css('pointer-events','unset')
+			.click( e => {
+				e.preventDefault()
+				// $('#d_login_form').toggle()
+				$('#d_reset_password_form').toggle()
+			})
+
+			$('#d_login_form').is(':visible') ? console.log('visible') : console.log('hidden');
+			;
 			
-		})
-		// 	setTimeout(e => {
-		// 		const btn = document.querySelector('.editor-post-publish-button')
-		// 		btn.addEventListener('click', event => {
-		// 			// alert(123)
-		// 			// location.reload();
-		// 			event.preventDefault()
-		// 			// $(btn).css({'pointer-events':'none'})
-		// 			$(btn).unbind();
-	
-		// 		})
+
+		$('#sign_up_for_free_toggle').click( e => {
+			
+
+			let state = {
+				login      : $('#d_login_form').is(':visible') ? true : false ,
+				register   : $('#d_register_form').is(':visible') ? true : false ,
+				pass_reset : $('#d_reset_password_form').is(':visible') ? true : false ,
+			}
+
+			const button = $(e.currentTarget)
+			const text = button.text()
+
+
+
+
+			if (text == 'Sign up free')
+				button.text('Login')
 				
-		// 		console.clear()
-		// 		console.log(btn);
-		// 		console.log('go')
+			else if (text == 'Login')
+				button.text('Sign up free')
 
-		// 	},4000)
-			
+			$('#d_login_form').toggle()
+			$('#d_register_form').toggle()
 
-		// return null 
+		})
+
 
 
         $('#action_in_tournament').click(e => {
@@ -68,7 +95,8 @@
 				type:'POST',
 				data: {action: 'buy_product'},
 				success: res =>{
-					// location.reload();
+					if(res.data =='updated')
+						location.reload();
 					console.log(res.data)
 				},
 

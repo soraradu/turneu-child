@@ -18,7 +18,7 @@
                 'meta_query' => array(
                     array(
                         'key' => 'start_date',
-                        'value' =>  date("Y-m-d"),
+                        'value' =>  date("Y-m-d ") /**H:i - for exact date */,
                         'compare' => '>=',
                         'type' => 'DATE'
                     )                   
