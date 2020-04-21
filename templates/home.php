@@ -5,6 +5,7 @@
 <?
 
     $context = [
+        'post'         => Timber::get_post(),
         'overview_torunaments' => Timber::get_posts( 
             array(  
                 'post_type' => 'tournament',
@@ -24,7 +25,18 @@
                 )
             )
         ),
-        'overview_tabs'=>true,
+        'overview_tabs'=> [
+            'Overview'    => [
+                'active' => true ,
+                'link' => ''
+            ],
+            'Torunaments' => [
+                'link' => '#'
+            ],
+            'News'        => [
+                'link' => '#'
+            ]
+        ],
 
     ] ;
 

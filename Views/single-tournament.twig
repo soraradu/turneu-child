@@ -1,0 +1,140 @@
+{% include '/components/hero.html' %}
+
+{# 
+<div class="container">
+
+	<div class="row">
+		<div class="col s12">
+			<h3>{{ post.title }}</h3>
+			<h5>Start date {{post.start_date}}</h5>
+			<h5>Enrollment cost : <b>{{post.cost}} {{post.currency}}</b></h5>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+
+			{{ post.content }}
+
+			<table>
+				<thead>
+					<th>#</th>
+					<th>Name</th>
+					<th>NickName</th>
+					<th>Data Time</th>
+					<th>Leave</th>
+				</thead>
+				<tbody>
+					{% set count = 1 %}
+					{% for row in table %}
+						<tr {% if row.user == fn('get_current_user_id') %} class="{{ ( row.leave == true )  ? 'opacity-04' : 'bgf5f5f5'  }}" {% endif %} >
+							<td>{{count}}</td>                            
+							<td>{{ fn('UserObject',row.user,null).GetUserFullName  }}</td>
+							<td>{{ fn('UserObject',row.user,null).GetUserNickName  }}</td>
+							<td>{{row.date_time}}</td>
+							<td>{{row.leave}}</td>
+						</tr>
+						{% set count = count+1 %}
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>    
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<button data-target="modal1" class="btn modal-trigger">{{ button_text }} Tournament</button>
+			{{ modal }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12"><h4>Status : {{ status }}</h4></div>
+	</div>
+
+
+</div> #}
+
+<style>
+	pre{
+		color: #fff
+	}
+</style>
+
+
+<div class="container-fluid">
+
+	<div class="container">
+	
+		<div class="row">
+			<div class="col">
+				<h5>Start Date: {{ post.start_date }}</h5>
+				<h5>Cost: {{ post.cost }} {{ post.currency }}</h5>
+				<h5>{{ post.slots }} Slots</h5>
+			</div>
+		</div>
+		<br><br><br>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="table-responsive">
+					<table class="table tournament-table">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col" class="text-pic">Pic</th>
+								<th scope="col">Name</th>
+								<th scope="col">NickName</th>
+								<th scope="col">Data Time</th>
+								<th scope="col">Leaved</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% set count = 1 %}
+							{% for row in post.get_field('tournament_tabel') %}
+								<tr>
+									<td>{{count}}</td>                                                    
+									<td class="img-td"><div><a href="{{ fn('UserObject',row.user,null).GetUserProfilePage  }}"><img src="{{ fn('UserObject',row.user,null).GetUserAvatar  }}" alt=""></a></div></td>
+									<td>{{ fn('UserObject',row.user,null).GetUserFullName  }}</td>
+									<td>{{ fn('UserObject',row.user,null).GetUserNickName  }}</td>
+									<td>{{row.date_time}}</td>
+									<td>{{row.leave}}</td>
+								</tr>
+								{% set count = count+1 %}
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>	
+
+			<div class="col-md-4">
+				{% set count = 1 %}
+				{% for prize in post.get_field('prize') %}
+					<p>#{{count}} {{ prize.prize}}</p>
+					{% set count = count+1 %}
+				{% endfor %}
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					{{ button_text }} Tournament
+				</button>
+			</div>
+		</div>
+
+		{# <div class="row">
+			<h4>{{ status }}</h4>
+		</div>
+
+		<div>
+			{{ button }}
+		</div> #}
+
+	</div>
+
+</div>
+
+{{ modal }}

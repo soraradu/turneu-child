@@ -16,15 +16,17 @@
 
     $context = [
         'post'         => Timber::get_post(),
-        'table'        => get_field('tournament_tabel') ,
+        // 'table'        => get_field('tournament_tabel') ,
+        // 'prize'        => get_field('prize'),
         'button'       => $UserEnrlollment->RenderButton() ,
         'button_text'  => $UserEnrlollment->GetButtonText(),
         'status'       => $UserEnrlollment->GetStatus(),
         'modal'        => $TournamentModal->RenderModal(),
     ] ;
 
-    
-    Timber::render('Views/TournamentTabel.twig', $context) ;
+
+
+    Timber::render('Views/single-tournament.twig', $context) ;
     
     unset($UserEnrlollment , $TournamentModal , $context) ;
 

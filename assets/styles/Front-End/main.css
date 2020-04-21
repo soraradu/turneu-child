@@ -138,7 +138,7 @@ body {
 
 .ww {
   position: fixed;
-  top: 60px;
+  top: 160px;
   right: 0;
   padding: 8px 16px;
   background: #353535;
@@ -230,6 +230,9 @@ body {
     -webkit-transition: all .3s ease !important;
     -o-transition: all .3s ease !important;
     transition: all .3s ease !important; }
+
+.um-header {
+  border: none !important; }
 
 header {
   background: var(--gray-soft);
@@ -637,5 +640,39 @@ footer.site-footer {
   @media (max-width: 576px) {
     .tournament-row .col-sm-9 {
       padding: 12px 0 0; } }
+
+.tournament-table thead tr .text-pic {
+  text-align: center; }
+
+.tournament-table tbody tr .img-td {
+  padding: 0;
+  position: relative; }
+  .tournament-table tbody tr .img-td div {
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .tournament-table tbody tr .img-td div img {
+      display: block;
+      -o-object-fit: cover;
+      object-fit: cover;
+      max-width: 36px;
+      max-height: 36px;
+      border-radius: 50%; }
+
+.tournament-table th, .tournament-table td {
+  color: #fff; }
+
+.modal .modal-title,
+.modal .modal-body {
+  color: #000; }
 
 /*# sourceMappingURL=main.css.map */

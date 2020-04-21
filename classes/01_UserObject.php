@@ -15,6 +15,8 @@
             $this->user_tickets        = get_field( 'tickets' , "user_$this->user_id");
             $this->user_id             = $user_id;
             $this->user_nickname       = get_user_meta($this->user_id, 'game_name', true) ;
+            $this->user_avatar         = get_avatar_url($this->user_id) ;
+            $this->user_profile_page   = get_author_posts_url($this->user_id) ;
 
             if ($this->user_points == null) $this->user_points = 50;
             if ($this->user_tickets == null) $this->user_tickets = 0;
@@ -48,6 +50,14 @@
 
             public function GetUserNickName() {
                 return $this->user_nickname ;
+            }
+
+            public function GetUserAvatar() {
+                return $this->user_avatar ;
+            }
+
+            public function GetUserProfilePage() {
+                echo $this->user_profile_page ;
             }
             
         // end

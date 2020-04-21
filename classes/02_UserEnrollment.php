@@ -71,10 +71,10 @@ class UserEnrlollment extends UserObject {
                 return  '<a class="waves-effect waves-light btn disabled " id="" >Enrollment date is over</a>';
 
             else
-                return '<a class="modal-close waves-effect waves-green btn-flat" id="action_in_tournament">' . $this->button_text . '</a> ' ;
+                return '<button type="button" class="btn btn-primary" id="action_in_tournament">'. $this->button_text .'</button>' ;
 
         }else {
-            return '<p>Please <a href="register">Register</a> or <a href="login">Login</a> to join a tournament </p>' ;
+            return '<button type="button" class="btn btn-secondary" data-dismiss="modal">Login or Register</button>' ;
         }
         // unset(create_html()) ;
 

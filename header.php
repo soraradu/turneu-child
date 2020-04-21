@@ -110,6 +110,17 @@
 					</div>
 				<?
 
+
+				if(is_user_logged_in()) : ?>
+					<p class='menu_text'>Account</p>
+					<div class="menu-meniu-tournament-container">
+						<ul id="primary-menu" class="menu">
+							<li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-66 current_page_item menu-item-68"><a href="<?=get_author_posts_url(get_current_user_id())?>" aria-current="page"><?=$svg['home']?> Main Profile Page</a></li>
+						</ul>
+					</div>
+
+				<?endif;
+
 				// wp_nav_menu(
 				// 	array(
 				// 		'theme_location' => 'theme_menu',
