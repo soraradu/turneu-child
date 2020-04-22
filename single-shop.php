@@ -15,7 +15,7 @@ $context = [
 
 ] ;
 
-Timber::render('Views/ShopPage.twig', $context) ;
+Timber::render('Templates/Views/ShopPage.twig', $context) ;
 
 unset($UserObject) ;
 ?>

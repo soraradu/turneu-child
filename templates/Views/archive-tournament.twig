@@ -1,4 +1,4 @@
-{% include '/components/hero.html' %}
+{% include 'Templates/Views/components/hero.html' %}
 
 
 <div class="container-fluid">
@@ -44,7 +44,7 @@
 
             <div class="col-md-9 tournament-rows-container">
 
-                {% set grupedTournaments = fn( 'FrontEndTime').GrupTournamentsByDate(tournaments) %}
+                {% set grupedTournaments = fn( 'FrontEndTime').GrupTournamentsByDate(posts) %}
 
                 {% for grup,dateGrup in grupedTournaments %}
                     

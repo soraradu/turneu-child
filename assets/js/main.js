@@ -25,8 +25,6 @@
 				$('#d_reset_password_form').toggle()
 			})
 
-			$('#d_login_form').is(':visible') ? console.log('visible') : console.log('hidden');
-			;
 			
 
 		$('#sign_up_for_free_toggle').click( e => {

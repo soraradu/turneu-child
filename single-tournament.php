@@ -26,7 +26,7 @@
 
 
 
-    Timber::render('Views/single-tournament.twig', $context) ;
+    Timber::render('Templates/Views/single-tournament.twig', $context) ;
     
     unset($UserEnrlollment , $TournamentModal , $context) ;
 

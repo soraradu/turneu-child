@@ -110,15 +110,23 @@ body {
 .ratio-16-9 .pic {
   padding-bottom: calc( 9 / 16 * 100%); }
 
+.ratio-1-1 .pic {
+  padding-bottom: 100%; }
+
 .ratio {
   width: 100%; }
   .ratio .pic {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    background: #ddd; }
     .ratio .pic img {
+      top: 0;
+      left: 0;
       position: absolute;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
 
 .radius-8 {
   border-radius: 8px;
@@ -502,15 +510,20 @@ footer.site-footer {
     margin-bottom: 20px;
     font-size: 20px; }
 
-.tournament-column {
+.tournament-column,
+.shop-column {
   margin-bottom: 40px; }
-  .tournament-column .ratio {
+  .tournament-column .ratio,
+  .shop-column .ratio {
     margin-bottom: 12px; }
-  .tournament-column h3, .tournament-column h4 {
+  .tournament-column h3, .tournament-column h4,
+  .shop-column h3,
+  .shop-column h4 {
     font-size: 12px;
     opacity: .4;
     margin: 4px 0; }
-  .tournament-column h2 {
+  .tournament-column h2,
+  .shop-column h2 {
     font-size: 16px;
     margin: 4px 0; }
 
