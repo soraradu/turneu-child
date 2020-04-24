@@ -25,19 +25,6 @@
                 )
             )
         ),
-        'overview_tabs'=> [
-            'Overview'    => [
-                'active' => true ,
-                'link' => ''
-            ],
-            'Torunaments' => [
-                'link' => '#'
-            ],
-            'News'        => [
-                'link' => '#'
-            ]
-        ],
-
     ] ;
 
 

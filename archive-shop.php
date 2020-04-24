@@ -11,7 +11,6 @@
 
     $context = [
         'posts' => Timber::get_posts( $args ) ,
-        'overview_tabs' => false
     ] ;
     Timber::render('Templates/Views/archive-shop.twig', $context) ;
 

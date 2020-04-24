@@ -1,0 +1,39 @@
+
+{% if post.thumbnail.src %}
+    {% set heroImage = post.thumbnail.src %}
+{% else %}
+    {% set heroImage = page_options.hero_image.url %}
+{% endif %}
+
+{% if post.title %}
+    {% set title = post.title %}
+{% else %}
+    {% set title = page_options.title %}
+{% endif %}
+
+
+
+
+
+<div class="container-fluid flex align-items-end hero_section" style="background-image: url('{{ heroImage }})">
+    <div class="container">
+        <div class="row">
+            <div class="ratio ratio-6-8 radius-8">
+                <div class="pic">
+                    <img src="http://localhost/Turneu/wp-content/uploads/2020/04/profileV1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col flex flex-column justify-content-end">
+                <div>
+                    <h1>{{title}}</h1>
+                    <div class="flex">
+                        {% for name,tab in page_options.tabs %}
+                            <a href="#{{tab.action}}" data-action="{{tab.action}}">{{tab.text}}</a>
+                        {% endfor %}
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>

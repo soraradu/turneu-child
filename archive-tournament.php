@@ -22,10 +22,10 @@
 
     $context = [
         'posts' => Timber::get_posts( $args ) ,
-        'overview_tabs' => false
+        'page_options' =>  get_field( 'archive_page_option-tournaments', 'option' ),
     ] ;
     Timber::render('Templates/Views/archive-tournament.twig', $context) ;
 
-    get_footer()
+    get_footer() ;
 
 ?>

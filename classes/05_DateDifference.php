@@ -91,7 +91,7 @@ class FrontEndTime {
         $grupedTournaments  = [
             'Today'           => [] ,
             'Tomorrow'        => [] ,
-            'Same Week'       => [] ,
+            'This Week'       => [] ,
             'Next Week'       => [] ,
             'After Next Week' => []
         ] ;
@@ -99,13 +99,15 @@ class FrontEndTime {
 
         
         function setArrayToPush($tournament) {
+
             return [
                 'link'       => $tournament->link ,
                 'start_date' => FrontEndTime()->FormatTrounamentDate($tournament->start_date) ,
                 'title'      => $tournament->title,
                 'cost'       => $tournament->cost,
-                'currency'   =>$tournament->currency,
-                'img'        => $tournament->thumbnail->src
+                'currency'   => $tournament->currency,
+                'img'        => $tournament->thumbnail->src,
+                'prize'      => ( $tournament->get_field('prize') ) ? $tournament->get_field('prize') : null ,
 
             ] ;
         }
@@ -121,7 +123,7 @@ class FrontEndTime {
                     array_push($grupedTournaments['Tomorrow'], setArrayToPush($tournament)) ;
                     
                 }elseif ($this->CheckIfIsInSameWeek($date)){
-                    array_push($grupedTournaments['Same Week'], setArrayToPush($tournament)) ;
+                    array_push($grupedTournaments['This Week'], setArrayToPush($tournament)) ;
                     
                 }elseif ($this->CheckIfIsNextWeek($date)){
                     array_push($grupedTournaments['Next Week'], setArrayToPush($tournament)) ;

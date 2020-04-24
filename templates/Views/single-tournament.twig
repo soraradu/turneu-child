@@ -1,4 +1,4 @@
-{% include 'Templates/Views/components/hero.html' %}
+{% include 'Templates/Views/components/hero.twig' %}
 
 
 <div class="container-fluid">
@@ -45,12 +45,63 @@
 				</div>
 			</div>	
 
-			<div class="col-md-4">
+
+
+
+			<div class="col-md-4 tournament-prize">
 				{% set count = 1 %}
-				{% for prize in post.get_field('prize') %}
-					<p>#{{count}} {{ prize.prize}}</p>
-					{% set count = count+1 %}
-				{% endfor %}
+
+
+				<div class="table-responsive">
+					<table class="table prize-table">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Prize</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{% for prize in post.get_field('prize') %}
+
+								<tr>
+									<td>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" width="19.492" height="19.497" viewBox="0 0 19.492 19.497">
+												<path id="Icon_ionic-md-trophy" data-name="Icon ionic-md-trophy" d="M19.494,6.046c.042-1.265.009-2.624,0-2.671H6.716c0,.047-.037,1.406,0,2.671H3.375a13.6,13.6,0,0,0,.984,5.937,8.28,8.28,0,0,0,2.75,3.294A32.626,32.626,0,0,0,12,17.975V19.3c-.216.469-1.1,1.321-3.9,1.321h-.97v2.249h12V20.623h-1.2c-2.844,0-3.514-.895-3.669-1.321V17.975a52.32,52.32,0,0,0,4.892-2.694,9.67,9.67,0,0,0,2.75-3.294,16.646,16.646,0,0,0,.979-5.941ZM6.261,11.055a7.724,7.724,0,0,1-.736-2.9H6.87c.033.281.066.529.108.764a20.753,20.753,0,0,0,1.2,4.522A6.721,6.721,0,0,1,6.261,11.055Zm13.72,0a6.769,6.769,0,0,1-1.949,2.4,20.463,20.463,0,0,0,1.209-4.54c.037-.234.075-.483.108-.764h1.373A7.725,7.725,0,0,1,19.981,11.055Z" transform="translate(-3.375 -3.375)" fill="{% if count == 1 %}#BC952C{% elseif count == 2 %}#ACACAC{% elseif count == 3 %}#8C612D{% else %}#49494F{% endif %}"/>
+											</svg>
+											<p>{{count}}</p>
+										</div>
+									</td>
+									<td>
+										<div>
+										
+											{#{{ prize.value|replace({' ': ''}) }}#}
+											<div class="currency">
+												{% if prize.currency == 'points' %}
+													{{svg_points}}
+												{% elseif prize.currency == 'tickets' %}								
+													{{svg_tickets}}
+												{% endif %}
+											</div>
+											<p>{{ prize.value }}</p>
+										</div>
+									</td>
+
+								</tr>
+
+								{% set count = count+1 %}
+							{% endfor %}
+
+
+						</tbody>
+						
+					</table>
+				</div>
+
+
+
+
 			</div>
 
 		</div>

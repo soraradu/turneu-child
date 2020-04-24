@@ -26,26 +26,26 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // Register the menu
 register_nav_menu( 'theme_menu', __( 'Theme Menu', 'theme-menu' ) );
+register_nav_menu( 'loged_in_menu', __( 'Loged In Menu', 'loged-in-menu' ) );
 
 
-
-// Allow SVG
-add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+// // Allow SVG
+// add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
  
-    // global $wp_version;
-    // if ( $wp_version !== '4.7.1' ) {
-    //    return $data;
-    // }
+//     // global $wp_version;
+//     // if ( $wp_version !== '4.7.1' ) {
+//     //    return $data;
+//     // }
    
-    $filetype = wp_check_filetype( $filename, $mimes );
+//     $filetype = wp_check_filetype( $filename, $mimes );
    
-    return [
-        'ext'             => $filetype['ext'],
-        'type'            => $filetype['type'],
-        'proper_filename' => $data['proper_filename']
-    ];
+//     return [
+//         'ext'             => $filetype['ext'],
+//         'type'            => $filetype['type'],
+//         'proper_filename' => $data['proper_filename']
+//     ];
    
-  }, 10, 4 );
+//   }, 10, 4 );
    
   function cc_mime_types( $mimes ){
     $mimes['svg'] = 'image/svg+xml';

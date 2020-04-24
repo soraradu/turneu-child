@@ -13,7 +13,7 @@
         $post_id = get_the_ID()
     ) ;
 
-
+    global $svg_points,$svg_tickets ;
     $context = [
         'post'         => Timber::get_post(),
         // 'table'        => get_field('tournament_tabel') ,
@@ -22,6 +22,8 @@
         'button_text'  => $UserEnrlollment->GetButtonText(),
         'status'       => $UserEnrlollment->GetStatus(),
         'modal'        => $TournamentModal->RenderModal(),
+        'svg_points'   => $svg_points,
+        'svg_tickets'   => $svg_tickets
     ] ;
 
 

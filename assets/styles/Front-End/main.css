@@ -272,13 +272,19 @@ nav#site-navigation {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      opacity: .5;
       padding-left: 20px;
-      line-height: 50px; }
-      nav#site-navigation ul#primary-menu li a svg {
-        margin: 4px 12px 4px 4px; }
-    nav#site-navigation ul#primary-menu li:nth-child(1) a {
-      opacity: 1; }
+      line-height: 50px;
+      -webkit-transition: all 0.25s ease-in-out 0s;
+      -o-transition: all 0.25s ease-in-out 0s;
+      transition: all 0.25s ease-in-out 0s; }
+      nav#site-navigation ul#primary-menu li a:hover {
+        -webkit-transition: all 0.25s ease-in-out 0s;
+        -o-transition: all 0.25s ease-in-out 0s;
+        transition: all 0.25s ease-in-out 0s; }
+      nav#site-navigation ul#primary-menu li a .menu-image-hover-wrapper {
+        padding-right: 0; }
+      nav#site-navigation ul#primary-menu li a .menu-image-title-after.menu-image-title {
+        padding-left: 4px; }
 
 #top_search {
   height: 80px;
@@ -711,6 +717,8 @@ footer.site-footer {
   @media (max-width: 576px) {
     .tournament-row .col-sm-9 {
       padding: 12px 0 0; } }
+  .tournament-row .prize {
+    margin-left: 24px; }
 
 #content {
   -webkit-transition: all .2s ease-in-out;
@@ -749,6 +757,35 @@ footer.site-footer {
       border-radius: 50%; }
 
 .tournament-table th, .tournament-table td {
+  color: #fff; }
+
+.tournament-prize div {
+  padding: 6px 0; }
+  .tournament-prize div p {
+    margin-left: 8px;
+    margin-bottom: 0; }
+  .tournament-prize div p:nth-of-type(1) {
+    margin-left: 0; }
+  .tournament-prize div .currency svg {
+    width: 16px; }
+
+.prize-table tbody tr td div {
+  max-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.prize-table tbody tr td:nth-of-type(1) p {
+  margin-left: 12px; }
+
+.prize-table tbody tr td:nth-of-type(2) p {
+  width: 40px;
+  margin-left: 12px; }
+
+.prize-table th, .prize-table td {
   color: #fff; }
 
 .modal .modal-title,
