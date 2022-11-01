@@ -18,7 +18,7 @@
   "homepage": "https://github.com/soraradu/turneu-child#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2"
   }
 }
